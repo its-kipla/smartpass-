@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitter:wght@500&family=Chewy&family=Rubik:wght@400;500;600;700&display=swap");
+
+/* =====================================================================
+   KONZA TECHNOLOGY CITY - Smart Pass   |   style.css  (updated look)
+   Blocks:  1 Variables  2 Base  3 Navigation  4 Buttons  5 Footer
+            6 Home  7 Login  8 Book a visit  9 How it works  10 Responsive
+   ===================================================================== */
+
+/* ---------- 1. VARIABLES (colours, fonts, image paths) ---------- */
+:root{
+  --green-dark:#00200d;  --green:#0a7a3a;  --green-bright:#0fc45e;
+  --accent:#16a34a;      /* fills: buttons, selected chips */
+  --neon:#00ff55;        /* highlights: PASS, links, hover */
+  --accent-light:#00ff55; --mint:#00ff55;
+  --line:#2fd16a;        --red:#c40000;   --white:#fff;
+  --glass:rgba(255,255,255,.08);  --glass-line:rgba(255,255,255,.18);
+
+  --font-body:"Rubik",system-ui,sans-serif;
+  --font-display:"Alfa Slab One",Georgia,serif;
+  --font-logo:"Chewy","Comic Sans MS",cursive;
+  --font-sub:"Bitter",Georgia,serif;
+
+  /* Put exported images in /images and these appear automatically */
+  --img-hex-a:url("images/globe-city.jpg");
+  --img-hex-b:url("images/skyline.jpg");
+  --img-login:url("images/login-bg.jpg");
+  --img-journey:url("images/city-aerial.jpg");
+  --img-map:url("images/world-map.jpg");
+  --img-campus:url("images/campus.jpg");
+}
+
+/* ---------- 2. BASE ---------- */
+*{box-sizing:border-box}
+html{background:var(--green-dark)}
+body{margin:0;font-family:var(--font-body);line-height:1.55;color:var(--white);
+  background-color:var(--green-dark);
+  background-image:radial-gradient(ellipse 45% 40% at 40% 38%,var(--green) 0,transparent 70%);
+  background-attachment:fixed;min-height:100vh;display:flex;flex-direction:column}
+h1,h2,h3{line-height:1.15}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f0b429;outline-offset:2px}
+.pill{margin:16px auto;width:min(1240px,94%);border-radius:30px;background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(8px)}
+
+/* ---------- 3. NAVIGATION (all pages except login) ---------- */
+.nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  padding:10px 28px 10px 18px;border-radius:40px;
+  background:linear-gradient(100deg,#1f2a22 0%,#1d4a2e 55%,#1f5a35 100%);
+  border:1.5px solid #050f08;backdrop-filter:none}
+.nav ul{display:flex;gap:32px;list-style:none;margin:0;padding:0;align-items:center}
+.nav a{text-decoration:none;font-size:1.1rem}
+.nav a:hover,.nav a.on,.nav a:focus-visible{color:var(--neon)}
+.nav a.login{background:var(--red);padding:8px 26px;border-radius:10px;color:#fff}
+.nav a.login:hover{color:#fff;filter:brightness(1.15)}
+
+.brand{display:flex;align-items:center;gap:22px;text-decoration:none;color:#faf8f8;line-height:1}
+.brand svg{width:116px;height:100px;flex:none}
+.brand b{display:block;font-family:var(--font-logo);font-weight:400;font-size:2.8rem;letter-spacing:.06em;line-height:1}
+.brand small{display:block;margin-top:10px;font-family:var(--font-sub);font-weight:500;font-size:1.45rem;letter-spacing:.01em}
+
+/* ---------- 4. BUTTONS ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;
+  border:1px solid var(--glass-line);background:rgba(255,255,255,.04);
+  color:#fff;font:inherit;font-size:1.05rem;text-decoration:none;cursor:pointer}
+.btn:hover,.btn:focus-visible{border-color:var(--neon)}
+.btn.dark{background:rgba(0,0,0,.45)}
+.row{display:flex;gap:28px;flex-wrap:wrap}
+
+/* ---------- 5. FOOTER (home) ---------- */
+.foot2{display:flex;justify-content:flex-start;align-items:flex-start;gap:48px;flex-wrap:wrap;
+  padding:20px 32px;font-size:.9rem;color:#cfe3d7;border-radius:30px}
+.foot2 a{margin-right:14px;text-decoration:none}
+.foot2 a:hover{color:var(--neon)}
+
+/* ---------- 6. HOME ---------- */
+.hero2{flex:1;width:min(1240px,94%);margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;
+  gap:24px;align-items:center;padding:40px 0}
+.hero2 h1{font-family:var(--font-display);font-weight:400;font-size:clamp(2.6rem,6vw,4.4rem);margin:0;line-height:1;letter-spacing:.01em}
+.hero2 h1 span{color:var(--neon)}
+.hero2 h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:500;margin:20px 0 14px}
+.hero2 p{font-size:1.2rem;line-height:1.5;max-width:34ch;font-weight:400;margin:0}
+.hero2 .row{margin-top:56px}
+
+/* hexagons sit on the RIGHT: big one top-left of its box, small one bottom-right, overlapping */
+.hexes{position:relative;justify-self:end;width:min(100%,560px);aspect-ratio:1/1.12}
+.hex{position:absolute;background:var(--line);
+  clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)}
+.hex::before{content:"";position:absolute;inset:2px;background:var(--pic);
+  clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)}
+.hex.a{width:78%;aspect-ratio:1.15/1;top:0;left:0;
+  --pic:var(--img-hex-a) center/cover,linear-gradient(180deg,#02060f,#0c2a3a 60%,#c9a24a)}
+.hex.b{width:58%;aspect-ratio:1.15/1;bottom:0;right:0;
+  --pic:var(--img-hex-b) center/cover,linear-gradient(180deg,#8a9a9a,#d9a070 60%,#e9954a)}
+
+/* ---------- 7. LOGIN ---------- */
+.split{display:grid;grid-template-columns:42% 58%;min-height:100vh}
+.split .art{margin:4vh 0 4vh 3vw;border-radius:28px;
+  background:var(--img-login) center/cover,
+    repeating-linear-gradient(90deg,transparent 0 14px,rgba(0,255,85,.3) 14px 16px),
+    linear-gradient(160deg,#02100a,#0b3a1e 55%,#1fa84f)}
+.split .pane{position:relative;display:flex;align-items:center;justify-content:center;padding:32px}
+.lcard{width:min(520px,100%);border:1.5px solid var(--line);border-radius:24px;padding:28px 36px;background:rgba(0,0,0,.18)}
+.lcard .brand{margin-bottom:12px;gap:14px}
+.lcard .brand svg{width:72px;height:62px}
+.lcard .brand b{font-size:1.9rem}
+.lcard .brand small{font-size:1rem;margin-top:6px}
+.lcard h1{font-size:2rem;margin:10px 0 2px;font-weight:500}
+.lcard p{margin:0 0 18px;font-size:.9rem}
+.field{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:18px;padding:0 14px;margin:14px auto;max-width:300px;background:rgba(0,0,0,.25)}
+.field input{border:0;background:transparent;color:#fff;padding:12px 0;text-align:center;font:inherit;width:100%}
+.field input::placeholder{color:#cfe3d7}
+.field button{background:none;border:0;color:#fff;cursor:pointer;font-size:1.1rem}
+.lrow{display:flex;justify-content:space-between;max-width:300px;margin:12px auto;font-size:.82rem}
+.lrow label{display:flex;gap:6px;align-items:center;font-weight:500}
+.lrow a{color:var(--neon);font-weight:500}
+.go{display:block;width:100%;max-width:320px;margin:18px auto;border:0;border-radius:20px;background:var(--accent);color:#fff;padding:11px;font:inherit;font-weight:600;cursor:pointer}
+.go:hover{filter:brightness(1.1)}
+.or{display:flex;align-items:center;gap:12px;max-width:300px;margin:6px auto;font-size:.8rem;font-weight:600}
+.or::before,.or::after{content:"";flex:1;border-top:1px solid #fff}
+.goo{display:block;width:100%;max-width:310px;margin:14px auto;border:1px solid var(--glass-line);background:transparent;color:#fff;padding:9px;font:inherit;font-weight:500;cursor:pointer}
+.reg{text-align:center;font-size:.8rem;font-weight:500}.reg a{color:var(--neon)}
+.homelink{position:absolute;right:28px;bottom:22px;font-weight:500;text-decoration:none}
+
+/* ---------- 8. BOOK A VISIT ---------- */
+.bk{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;padding:20px 5vw 40px;flex:1}
+.chip{display:inline-block;border:1px solid var(--glass-line);background:var(--glass);border-radius:14px;padding:6px 16px;font-size:.85rem;font-weight:500}
+.bk h1{font-family:var(--font-display);font-weight:400;font-size:clamp(2rem,4.5vw,3rem);margin:18px 0 10px}
+.bk h1 span{color:var(--neon)}
+.bk .lead{max-width:52ch}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);margin:26px 0}
+.feats div{text-align:center;padding:6px 8px;font-weight:500;font-size:.9rem;border-left:1px solid var(--line)}
+.feats div:first-child{border-left:0}
+.feats i{display:block;font-style:normal;font-size:1.6rem;margin-bottom:6px}
+.journey{min-height:200px;border-radius:14px;display:flex;align-items:center;padding:24px;
+  background:var(--img-journey) center/cover,linear-gradient(120deg,#0f3d6b,#1c6a94 45%,var(--green))}
+.journey h2{font-size:2rem;max-width:12ch;margin:0;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.bform{border:1.5px solid var(--line);border-radius:22px;padding:24px 28px;background:rgba(0,0,0,.18)}
+.bhead{display:flex;gap:14px;align-items:center;margin-bottom:6px}
+.bhead .ic{font-size:2.2rem}.bhead h2{margin:0;font-size:1.7rem}.bhead p{margin:0;font-size:.85rem}
+.bform label.t{display:block;font-weight:600;margin:14px 0 6px}
+.bform .f{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:14px;padding:0 12px;background:rgba(0,0,0,.25)}
+.bform .f input{border:0;background:transparent;color:#fff;padding:12px 0;font:inherit;width:100%}
+.bform .f input::placeholder{color:#cfe3d7}
+.types{display:flex;gap:10px;flex-wrap:wrap}
+.types label{cursor:pointer}.types input{position:absolute;opacity:0}
+.types span{display:block;padding:8px 16px;border-radius:18px;border:1px solid var(--line);font-size:.85rem;font-weight:500}
+.types input:checked+span{background:var(--accent)}
+.types input:focus-visible+span{outline:3px solid #f0b429}
+.sub{display:block;margin:24px auto 0;background:var(--accent);border:0;color:#fff;font:inherit;font-weight:600;padding:14px 40px;border-radius:14px;cursor:pointer}
+.sub:hover{filter:brightness(1.1)}
+.ok{text-align:center;font-weight:500;color:var(--neon)}
+
+/* ---------- 9. HOW IT WORKS ---------- */
+.hw{padding:10px 5vw 36px;flex:1}
+.hw-top{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin-bottom:28px}
+.hw h1{font-family:var(--font-display);font-weight:400;font-size:clamp(2.4rem,6vw,3.6rem);margin:0 0 28px}
+.hw h1 span{color:var(--neon)}
+.hw-top p{max-width:46ch}
+.priority{font-family:Georgia,serif;font-style:italic;font-size:1.4rem;transform:rotate(-12deg);display:inline-block;margin-bottom:8px}
+.map{min-height:220px;border-radius:30px 8px 8px 30px;border:1px solid rgba(0,255,85,.35);box-shadow:0 8px 24px rgba(0,0,0,.35);
+  background:var(--img-map) center/cover no-repeat,radial-gradient(circle at 60% 50%,#1e7fa8 0,#0b2a3d 55%,#04141f 100%)}
+.steps{list-style:none;padding:0;margin:0 0 26px;display:grid;grid-template-columns:repeat(5,1fr);gap:26px}
+.steps li{position:relative;border:1px solid var(--line);padding:14px;background:rgba(0,0,0,.18);font-size:.85rem}
+.steps li:not(:last-child)::after{content:"\2192";position:absolute;right:-22px;top:50%;transform:translateY(-50%);font-size:1.3rem;color:var(--neon)}
+.steps i{display:block;font-style:normal;margin-bottom:6px;opacity:.7}
+.steps h3{font-size:1rem;margin:0 0 8px}.steps p{margin:0}
+.easy{display:grid;grid-template-columns:1.1fr 1fr 1.2fr 1fr;gap:20px;align-items:center;border:1px solid var(--line);padding:14px 20px;font-size:.85rem}
+.easy small{font-weight:600}.easy b{display:block;font-size:1.05rem}.easy b span{color:var(--neon)}
+.easy h3{font-size:1rem;margin:0}.easy p{margin:0}
+.easy .photo{align-self:stretch;min-height:84px;margin:-14px -20px -14px 0;border-radius:0 3px 3px 0;border-left:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(0,32,13,.7),transparent 35%),var(--img-campus) center/cover no-repeat,linear-gradient(120deg,#6d8fa8,#3d6b52,#9fb6a8)}
+
+/* ---------- 10. RESPONSIVE ---------- */
+@media(max-width:900px){
+  .nav ul{gap:16px}.nav a{font-size:1rem}
+  .brand svg{width:72px;height:62px}.brand b{font-size:2rem}.brand small{font-size:1rem;margin-top:6px}
+  .hero2,.bk,.hw-top,.easy{grid-template-columns:1fr}
+  .hero2{padding:28px 0}.hero2 .row{margin-top:32px}
+  .hexes{justify-self:center;width:min(100%,420px)}
+  .feats{grid-template-columns:repeat(2,1fr);gap:14px}.feats div:nth-child(3){border-left:0}
+  .steps{grid-template-columns:1fr}
+  .steps li:not(:last-child)::after{content:"\2193";right:auto;left:50%;top:auto;bottom:-24px;transform:translateX(-50%)}
+  .split{grid-template-columns:1fr}.split .art{display:none}
+}
