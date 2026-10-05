@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Log in | Konza Technology City</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body class="green">
+    <div class="split">
+        <div class="art" role="img" aria-label="Digital pathway illustration">
+
+        </div>
+<main class="pane">
+    <section class="lcard">
+<!-- <a class="brand" href="index.html">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="24" r="20" fill="#2fd16a"/><circle cx="20" cy="30" r="12" fill="#1fa84f"/><circle cx="44" cy="30" r="12" fill="#1fa84f"/><path d="M30 30h4v26h-4z" fill="#0a3b1e"/><circle cx="38" cy="18" r="2.5" fill="#e8263d"/></svg><span><b>KONZA</b><small>TECHNOLOGY CITY</small></span></a> -->
+<h1>Login to your account</h1>
+<p>Enter your credentials to access your Smart Pass</p>
+<form onsubmit="event.preventDefault()">
+<div class="field">
+    <span aria-hidden="true">👤</span>
+    <input type="text" aria-label="Email or ID number" placeholder="email\ID number" required>
+</div>
+<div class="field">
+    <span aria-hidden="true">🔒</span>
+    <input id="pw" type="password" aria-label="Password" placeholder="password" required>
+    <button type="button" aria-label="Show password" onclick="var p=document.getElementById('pw');p.type=p.type==='password'?'text':'password'">👁</button>
+</div>
+<div class="lrow">
+    <label>
+        <input type="checkbox"> Remember me
+    </label>
+    <a href="#">Forgot password?</a>
+</div>
+<button class="go" type="submit">Log in</button>
+<div class="or">OR</div>
+<button class="goo" type="button">Continue with Google</button>
+<p class="reg">Don't have an account? <a href="#">Register here</a>
+</p>
+</form>
+</section>
+<button class="homelink" href="index.html">Home</button>
+</main>
+</div>
+</body>
+</html>
