@@ -1,49 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Book a visit | Konza Technology City</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Book a visit | Smart Pass | Konza Technology City</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body class="green">
-<!-- <header class="nav pill"><a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="24" r="20" fill="#2fd16a"/><circle cx="20" cy="30" r="12" fill="#1fa84f"/><circle cx="44" cy="30" r="12" fill="#1fa84f"/><path d="M30 30h4v26h-4z" fill="#0a3b1e"/><circle cx="38" cy="18" r="2.5" fill="#e8263d"/></svg><span><b>KONZA</b><small>TECHNOLOGY CITY</small></span></a> -->
-<nav><ul><li><a href="index.html">Home</a></li><li><a class="on" href="book-visit.html">Book a visit</a></li><li><a href="how-it-works.html">How it works</a></li><li><a class="login" href="login.html">Log in</a></li></ul></nav></header>
-<main class="bk"><section>
-<span class="chip">Plan your visit</span>
-<h1>Book a visit to<br>
-    <span>Konza Technology City</span>
-</h1>
-<p class="lead">Explore our innovation hub, experience the future of technology and meet the community. Book your visit with just a few clicks.</p>
-<div class="feats">
-    <div>
-        <i>🖥
 
-        </i>Campus tour</div>
-        <div><i>👥</i>Meet experts</div>
-        <div><i>🔦</i>See innovation</div>
-        <div><i>⌘</i>Experience the future</div>
-    </div>
-<div class="journey">
-    <h2>Your journey to innovation starts here</h2>
-</div>
-</section>
-<form class="bform" onsubmit="event.preventDefault();this.querySelector('.ok').hidden=false">
-<div class="bhead">
-    <span class="ic" aria-hidden="true">📅</span>
-    <div>
-        <h2>Book your visit</h2>
-        <p>Fill in the details below and we'll get back to you</p></div>
-    </div>
-<label class="t" for="n">Full name*</label>
-<div class="f"><span aria-hidden="true">👤</span>
-    <input id="n" placeholder="Enter your full name" required></div>
-<label class="t" for="e">Email address*</label>
-<div class="f"><span aria-hidden="true">✉</span><input id="e" type="email" placeholder="you@example.com" required></div>
-<label class="t" for="p">Phone number*</label>
-<div class="f"><span aria-hidden="true">📞</span><input id="p" type="tel" required></div>
-<label class="t" id="vt">Visit type*</label>
-<div class="types" role="radiogroup" aria-labelledby="vt"><label><input type="radio" name="v" checked><span>Campus tour</span></label><label><input type="radio" name="v"><span>Research meetings</span></label><label><input type="radio" name="v"><span>Business meeting</span></label></div>
-<label class="t" for="d">Preferred date*</label><div class="f"><input id="d" type="date" style="width:100%;color-scheme:dark" required></div>
-<button class="sub" type="submit">Submit booking</button>
-<p class="ok" hidden>Request received. We'll email you a confirmation.</p></form></main></body></html>
+<header>
+<nav class="nav pill">
+    <a class="brand" href="index.html">
+        <svg viewBox="0 0 160 138" fill="none" stroke="#0b5a2a" stroke-width="2.6" stroke-linejoin="round" aria-hidden="true"><path d="M78 100L70 80L50 70L30 72M70 80L60 60L48 48M60 60L62 40M78 100L80 70L82 45L90 30M82 45L74 32M80 70L100 62L118 50M78 100L92 85L112 80L132 84M92 85L104 98L120 100M70 80L40 90L18 88M66 72L56 56M100 62L104 44M112 80L122 68"/><g stroke-width="2.2"><circle cx="26" cy="72" r="4"/><circle cx="46" cy="44" r="4"/><circle cx="62" cy="36" r="4"/><circle cx="92" cy="26" r="4"/><circle cx="72" cy="28" r="4"/><circle cx="122" cy="47" r="4"/><circle cx="136" cy="84" r="4"/><circle cx="124" cy="101" r="4"/><circle cx="14" cy="88" r="4"/><circle cx="54" cy="52" r="4"/><circle cx="104" cy="40" r="4"/><circle cx="125" cy="64" r="4"/></g><circle cx="86" cy="58" r="4.2" stroke="#e8101a" stroke-width="2.4"/><path d="M72 100h13v36H72z" fill="#0b5a2a" stroke="none"/></svg>
+        <span><b>KONZA</b><small>TECHNOLOGY CITY</small></span>
+    </a>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="on" href="book-visit.html">book a visit</a></li>
+        <li><a href="how-it-works.html">how it works</a></li>
+        <li><a class="login" href="login.html">log in</a></li>
+    </ul>
+</nav>
+</header>
+
+<main class="bk">
+    <section class="info">
+        <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>plan your visit</span>
+        <h1>Book a visit to <span>konza Technology City</span></h1>
+        <p class="lead">explore our innovation hub experience the future of technology and meet the community .book your visit with just a few clicks</p>
+
+        <ul class="feats">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>campus tour</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M6 20c0-3.5 2.7-6 6-6s6 2.5 6 6M1 19c0-2 1.5-3.5 3.5-3.5M23 19c0-2-1.5-3.5-3.5-3.5"/></svg>Meet Experts</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6l-1 6h-4zM10 9v12h4V9"/></svg>see innovation</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6a3 3 0 10-3 3h12a3 3 0 10-3-3v12a3 3 0 103-3H6a3 3 0 103 3z"/></svg>experience the future</li>
+        </ul>
+
+        <div class="journey">
+            <h2>your journey to innovation starts here</h2>
+        </div>
+    </section>
+
+    <form class="bform" id="bookForm" action="#" method="post">
+        <div class="bhead">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <div>
+                <h2>Book your visit</h2>
+                <p>fill in the details below and well get back to you</p>
+            </div>
+        </div>
+
+        <label class="t" for="name">Full Name*</label>
+        <div class="f">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+            <input id="name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required>
+        </div>
+
+        <label class="t" for="email">Email Address*</label>
+        <div class="f">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></svg>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+
+        <label class="t" for="phone">Phone number*</label>
+        <div class="f">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+            <input id="phone" name="phone" type="tel" placeholder="+254 ..." autocomplete="tel" required>
+        </div>
+
+        <label class="t" id="vt">visit type*</label>
+        <div class="types" role="radiogroup" aria-labelledby="vt">
+            <label><input type="radio" name="type" value="campus tour" checked><span>campus tour</span></label>
+            <label><input type="radio" name="type" value="research meetings"><span>research<br>meetings</span></label>
+            <label><input type="radio" name="type" value="business meeting"><span>business<br>meeting</span></label>
+        </div>
+
+        <label class="t" for="date">prefered date*</label>
+        <div class="f">
+            <input id="date" name="date" type="date" required>
+        </div>
+
+        <button class="sub" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>submit booking</button>
+        <p class="ok" id="ok" role="status" hidden>Thank you! We will get back to you soon.</p>
+    </form>
+</main>
+
+<script>
+    document.getElementById('bookForm').addEventListener('submit',function(e){
+        e.preventDefault();
+        document.getElementById('ok').hidden=false;
+        this.reset();
+    });
+</script>
+</body>
+</html>
